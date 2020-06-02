@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>easySoft</title>
+        <link href="/styles.css" rel="stylesheet" type="text/css"/>
+        
+    </head>
+    <body id="homeviewbody">
+        <div class="navbar">
+            <ul>
+                <li><a href="#Executives">Executives</a></li>
+                <li class="dropdown">
+                  <a href="javascript:void(0)" class="dropbtn">Members</a>
+                  <div class="dropdown-content">
+                    <a href="#">Pay Tithe</a>
+                    <a href="#">Pay Offertory</a>
+                    <a href="#">Sow Seed</a>
+                  </div>
+                </li>
+                <li><a href="">Chatroom</a></li>
+                <li><a href="">Testimonies</a></li>
+                <li><a href="">Donate</a></li>
+            </ul>
+        
+
+        
+
+        </div>
+          
+        <div class="row">
+
+            <div class="columntopleft">
+                    <img class="mySlides" src="lapi_image.jpg" style="width:1000px; height: 300px;">
+    
+                    <img class="mySlides" src="download.jpeg" style="width:1000px; height: 300px;">
+                
+            </div>
+            <script>
+                    var myIndex = 0;
+                    carousel();
+                    
+                    function carousel() {
+                      var i;
+                      var x = document.getElementsByClassName("mySlides");
+                      for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";  
+                        }
+                      myIndex++;
+                      if (myIndex > x.length) {myIndex = 1}    
+                      x[myIndex-1].style.display = "block";  
+                      setTimeout(carousel, 10000); // Change image every 2 seconds
+                    }
+            </script>
+            
+
+            <div class="columntopright">
+                <h2>News</h2>
+                <div style=" border-radius: 3px; padding: 5px; ">
+                    <u><h3>A Member donates football to the Church team</h3></u>
+                    <img src="donate.jpg" style="width: 200px; height: 100px;">
+                     <h4>Mr. konadu is his name</h4>
+                     <p>He said he will Donate this amount</p>
+                     <p>in honour of his late wife</p>
+                 </div>
+                 <br>
+                 <br>
+                 <div style=" border-radius: 3px; padding: 5px; ;">
+                        <u><h3>Primary School Building Project commences</h3></u>
+                        <img src="students.jpg" style="width: 200px; height: 100px;">
+                        <h4>The children and the community are happy</h4>
+                        <p>we all know how well everyone loves </p>
+                        <p>development and infrastracture</p>
+                     
+                 </div>
+                 <h2>Quotations</h2>
+                <div style=" border-radius: 3px; padding: 5px; background-color: lightblue;">
+                    <h3> Memory Verse Of the Day</h3>
+                     <h4>John 10:30</h4>
+                     <p>And Jesus Wept</p>
+                 </div>
+                 <br>
+                 <br>
+                 <div style=" border-radius: 3px; padding: 5px; background-color: lightblue;">
+                        <h3>Bible Readings</h3>
+                        <h4>John 10:1-35</h4>
+                        <h4>Ecclesiastis: 12:3-20</h4>
+                     
+                 </div>
+                  
+            </div>
+            <div class="column1">
+                <h2>Today's Preaching</h2>
+                <video width="1000" height="500" controls>
+                    <source src="/COURAGE.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+            </div>
+
+              
+                
+            
+            <div class="column3" >
+                <h2>Announcements</h2>
+                
+                <div class="w3-content w3-display-container">
+
+                    <div class="w3-display-container Slides">
+                      <img src="book_love.jpg" style="width:100%">
+                      <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-black">
+                        French Alps
+                        Gave His son whooping
+                      </div>
+                    </div>
+                    
+                    <div class="w3-display-container Slides">
+                      <img src="eiffel.jpg" style="width:100%">
+                      <div class="w3-display-bottomright w3-large w3-container w3-padding-16 w3-black">
+                        Northern Lights
+                        is not what you see
+                      </div>
+                    </div>
+                    
+                    <div class="w3-display-container Slides">
+                      <img src="three.jpeg" style="width:100%">
+                      <div class="w3-display-topleft w3-large w3-container w3-padding-16 w3-black">
+                        Beautiful Mountains
+                        my whole life
+                      </div>
+                    </div>
+                    
+                    <div class="w3-display-container Slides">
+                      <img src="bird.jpg" style="width:100%">
+                      <div class="w3-display-topright w3-large w3-container w3-padding-16 w3-black">
+                        The Rain Forest
+                         is spectacular
+                      </div>
+                    </div>
+                    
+                    <div class="w3-display-container Slides">
+                      <img src="bg_image.jpg" style="width:100%">
+                      <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+                        Mountains
+                        are a beautiful site
+                      </div>
+                    </div>
+                    
+                    <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>
+                    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">&#10095;</button>
+                    
+                    </div>
+                    
+                    <script>
+                    var slideIndex = 1;
+                    showDivs(slideIndex);
+                    
+                    function plusDivs(n) {
+                      showDivs(slideIndex += n);
+                    }
+                    
+                    function showDivs(n) {
+                      var i;
+                      var x = document.getElementsByClassName("Slides");
+                      if (n > x.length) {slideIndex = 1}
+                      if (n < 1) {slideIndex = x.length}
+                      for (i = 0; i < x.length; i++) {
+                         x[i].style.display = "none";  
+                      }
+                      x[slideIndex-1].style.display = "block";  
+                    }
+                    </script>
+
+            </div>
+        </div>
+            
+          
+        <div class="footer">
+            
+        </div>
+          
+        
+    </body>
+</html>
