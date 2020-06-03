@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Donations</title>
+        <link href="/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body id="paytithebody" style="box-sizing: border-box; border: 1px solid black; padding: 5px; width: 400px; align-items: center;" >
+        <h1>Make a Donation</h1>
+        <div id="paytithe" >
+            
+            <form id="paytitheform" method="POST" action="/pay_tithe" >  
+               <p><b id="namelabel" >Full Name</b></p>
+                <p><input type="text" style="padding-bottom: 3px; border-bottom: 1px solid black;" name="name" placeholder="input name" required/></p>
+                
+                <p><b id="inputlabel" >Phone Number</b></p> 
+                <input type="number" style="padding-bottom: 3px; border-bottom: 1px solid black;" name="phone_number" placeholder="input number" required/></p>
+                <p><b id="inputlabel" >Amount</b></p> 
+                <input type="number" style="padding-bottom: 3px; border-bottom: 1px solid black;" name="amount" placeholder="enter amount" required/></p>
+                    <button type="submit" style="padding-left: 20px; margin-left: 20px;">sumbit</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add employeees</title>
+        <link href="/styles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body id="paytithebody">
+        <h1>Pay tithe</h1>
+        <div id="paytithe">
+            
+            <form id="paytitheform" method="POST" action="/pay_tithe">  
+               <p id="namelabel">Full Name  <input type="text" name="name" placeholder="input name" required/></p>
+                
+                <p id="inputlabel">Phone Number <input type="number" name="phone_number" placeholder="input number" required/></p>
+                <p id="inputlabel">Amount <input type="number" name="amount" placeholder="enter amount" required/></p>
+                    <button type="submit" >sumbit</button>
+            </form>
+        </div>
+    </body>
+</html>

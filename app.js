@@ -49,99 +49,57 @@ app.get('/', function(req, res){
     res.render('homeView')
 })
 
-app.get('/employeeList', urlencodedParser, function(req, res){
+app.get('/sow_seeds', urlencodedParser, function(req, res){
+    res.render('sow_seeds_view')
     
-    MongoClient.connect(url, function(err, db) {
-      if (err) throw err;
-      var dbo = db.db(dbName);
-      dbo.collection(collectionName).find({}).toArray( function(err, result) {
-        if (err) throw err;
-        console.log("documents retrieved");
-        console.log(result);
-        db.close();
-        res.render('employeeListView', {result});
-        
-      });
-       
-    });
+});
+
+app.get('/chatroom', urlencodedParser, function(req, res){
+  res.render('chatroom_view')
+  
 });
 
     
 //get complete list of employees and their todolist and render it in todolist view
-app.get('/todoList', function(req, res){
-    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db(dbName);
-        dbo.collection(collectionName).find({}).toArray( function(err, todoresult) {
-          if (err) throw err;
-          console.log("all todo items retrieved");
-          console.log(todoresult);
-          db.close();
-          res.render('todoListView', {todoresult});
-          
-        });
-         
-      });    
+app.get('/pay_tithe', function(req, res){
+    res.render('pay_tithe_view') 
 
     })
+
+    app.get('/testimonies', urlencodedParser, function(req, res){
+      res.render('testimonies_view')
+      
+  });
     
-app.get('/addEmployee', function(req, res){
-    res.render('addEmployeeView')
+app.get('/pay_offertory', function(req, res){
+    res.render('pay_offertory_view')
 })
 
-
-
-
-//get employee data and save it to 
-app.post('/addEmployee', urlencodedParser, function(req, res){
-    
-    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
-      if (err) throw err;
-      var dbo = db.db(dbName);
-      var List = req.body.list.slice(0)
-      var splitedList = List.split(/\n/)
-      var data = {name: req.body.name, list: []}
-      console.log(data)
-      
-      dbo.collection(collectionName).insertOne(data, function(err, res) {
-        if (err) throw err;
-        console.log("1 document inserted");
-         for(var i = 0; i<splitedList.length; i++){
-                console.log(splitedList[i])
-                dbo.collection(collectionName).updateOne({name: req.body.name}, { $push:{list: splitedList[i]} })
-            }
-      });
-        
-    });
-    const feedback = "Employee added succesfully"
-    res.render('successView', {feedback});
-});
-
-//get todo request and render the the result in todo request view
-app.post('/todoRequest', urlencodedParser, function(req, res){
-    MongoClient.connect(url, { useUnifiedTopology: true }, function(err, db) {
-      if (err) throw err;
-      var query = { name: req.body.name }
-      var dbo = db.db(dbName);
-      dbo.collection(collectionName).find(query).toArray(function(err, result) {
-        if (err) throw err;
-        console.log("query made");
-        db.close();
-        console.log(result)
-        console.log(result.length)
-        if (result.length == 0){
-          res.render('notFoundView')
-        }
-        else{
-          res.render('todoRequestView', {result})
-        }
-        
-      });
-        
-    });
+//get tithe values and re-render page
+app.get('/donate', urlencodedParser, function(req, res){
+     res.render('donations_view')
     
 });
 
+
+
+//get user credentials and re-render page
+app.post('/pay_offertory', urlencodedParser, function(req, res){
+  res.render('pay_offertory_view')
+ 
+});
+
+//get tithe values and re-render page
+app.post('/pay_tithe', urlencodedParser, function(req, res){
+     res.render('pay_tithe_view')
+    
+});
+
+//get sow seeds values and re-render page
+app.post('/sow_seeds', urlencodedParser, function(req, res){
+     res.render('sow_seeds_view')
+    
+});
 
 //listen to port
 app.listen(3000)

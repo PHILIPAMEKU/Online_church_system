@@ -128,7 +128,7 @@ ul {
     width: 800px;
     
     padding: 10px;
-    height: 500px; 
+    height: 600px; 
     float: left;
    
     
@@ -143,9 +143,11 @@ ul {
 
   /* Style the footer */
   .footer {
+    align-items: center;
     background-color: #333;
     padding: 10px;
-    height: 200px;
+    height: 50px;
+    align-content: center;
     
   }
   
